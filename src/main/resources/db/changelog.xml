@@ -5,4 +5,5 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <include file="db/v1_create_card_and_bank_account_tables.sql"/>
+    <include file="db/v2_insertion_queries.sql"/>
 </databaseChangeLog>
