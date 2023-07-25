@@ -17,23 +17,24 @@ public class BankAccount {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "account_number", nullable = false)
     private UUID accountNumber;
 
     /**
      * Client first name.
      */
-    @Column(name = "client_first_name", nullable = false)
-    private String clientFirstName;
+    @Column(name = "first_name", nullable = false)
+    private String firstName;
 
     /**
      * Client last name.
      */
-    @Column(name = "client_last_name", nullable = false)
-    private String clientLastName;
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
 
     /**
      * Client patronymic.
      */
-    @Column(name = "client_patronymic")
-    private String clientPatronymic;
+    @Column(name = "patronymic")
+    private String patronymic;
 }
