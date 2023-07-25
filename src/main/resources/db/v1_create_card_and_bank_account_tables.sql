@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS bank_account(
 CREATE TABLE IF NOT EXISTS card(
   id BIGSERIAL PRIMARY KEY,
   account_number UUID NOT NULL,
-  card_type VARCHAR(20) NOT NULL,
+  card_type INTEGER NOT NULL,
   FOREIGN KEY(account_number) REFERENCES bank_account(account_number)
 );
 
