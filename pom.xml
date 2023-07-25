@@ -53,8 +53,7 @@
 			<version>2.20.1</version>
 			<scope>test</scope>
 		</dependency>
-
-
+		
 		<!-- JXFW  -->
 		<dependency>
 			<groupId>ru.croc.ctp</groupId>
@@ -87,7 +86,13 @@
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
 		</dependency>
-	</dependencies>
+
+		<!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
