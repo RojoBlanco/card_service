@@ -7,9 +7,9 @@ spring:
   application:
     name: cards-service
   datasource:
-    url: jdbc:postgresql://127.0.0.1:5432/cards-db
-    username: cards-db-user
-    password: cards-db-password
+    url: jdbc:postgresql://127.0.0.1:5432/hipstercard-db
+    username: hipstercard-db-user
+    password: hipstercard-db-password
   jpa:
     properties:
       hibernate:
