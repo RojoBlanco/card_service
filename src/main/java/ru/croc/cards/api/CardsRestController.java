@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.croc.cards.domain.BankAccount;
-import ru.croc.cards.domain.CardType;
+import ru.croc.cards.domain.Card;
 import ru.croc.cards.domain.repo.BankAccountRepository;
 import ru.croc.cards.dto.BankAccountDTO;
 import ru.croc.cards.dto.CardDTO;
 import ru.croc.cards.exceptions.BankAccountNotFoundException;
+import ru.croc.cards.exceptions.CardNotFoundException;
+import ru.croc.cards.repository.CustomCardRepository;
 
 import java.util.Optional;
 
@@ -22,6 +24,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CardsRestController {
     private final BankAccountRepository bankAccountRepository;
+    private final CustomCardRepository cardRepository;
 
     @PostMapping("/get-card-type")
     public CardDTO getCardType(@Valid @RequestBody BankAccountDTO bankAccountDTO) {
@@ -34,11 +37,18 @@ public class CardsRestController {
                     " was not found in database!");
         }
 
-        log.info("Extracted bankAccount : firstName={}, lastName={}, patronymic={}", bankAccount.get().getFirstName(),
+        log.info("Extracted bankAccount: firstName={}, lastName={}, patronymic={}", bankAccount.get().getFirstName(),
                 bankAccount.get().getLastName(), bankAccount.get().getPatronymic());
 
+        Optional<Card> card = cardRepository.findByBankAccount(bankAccount.get());
+        if (card.isEmpty()) {
+            throw new CardNotFoundException("Card with bankAccountNumber " + bankAccountDTO.getBankAccount() +
+                    " was not found in database!");
+        }
+
+        log.info("Extracted card: id={}, cardType={}", card.get().getId(), card.get().getCardType());
         return CardDTO.builder()
-                .cardType(CardType.DEFAULT)
+                .cardType(card.get().getCardType())
                 .build();
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.croc.cards.dto.ResponseMessage;
 import ru.croc.cards.exceptions.BankAccountNotFoundException;
+import ru.croc.cards.exceptions.CardNotFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,8 +29,8 @@ public class CardsRestControllerAdvice {
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(BankAccountNotFoundException.class)
-    public ResponseMessage handleBankAccountNotFoundException(BankAccountNotFoundException exception) {
+    @ExceptionHandler({BankAccountNotFoundException.class, CardNotFoundException.class})
+    public ResponseMessage handleBankAccountNotFoundException(Exception exception) {
         return ResponseMessage.builder()
                 .message(exception.getMessage())
                 .build();
