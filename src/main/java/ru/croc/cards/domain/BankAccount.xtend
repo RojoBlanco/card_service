@@ -13,9 +13,8 @@ import java.util.UUID;
 @XFWObject
 @Table(name = "bank_account")
 public class BankAccount {
-
-    @XFWElementLabel("Unique identifier")
     @Id
+    @XFWElementLabel("Unique identifier")
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "account_number", nullable = false)
     private UUID accountNumber;

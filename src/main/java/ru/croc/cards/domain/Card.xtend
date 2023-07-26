@@ -14,9 +14,8 @@ import ru.croc.ctp.jxfw.core.domain.meta.XFWElementLabel;
 @XFWObject
 @Table(name = "card")
 public class Card {
-
-    @XFWElementLabel("Unique card identifier")
     @Id
+    @XFWElementLabel("Unique card identifier")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "card_seq")
     @SequenceGenerator(name = "card_seq", sequenceName = "card_seq", allocationSize = 1)
     private Long id;
