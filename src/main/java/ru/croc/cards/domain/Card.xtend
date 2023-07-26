@@ -1,7 +1,6 @@
 package ru.croc.cards.domain;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,7 +14,7 @@ import ru.croc.ctp.jxfw.core.generator.meta.XFWObject;
 @Table(name = "card")
 public class Card {
     /**
-     * Unique identifier.
+     * Unique card identifier.
      */
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "card_seq")
@@ -32,6 +31,7 @@ public class Card {
     /**
      * Type of the card.
      */
-    @Column(name = "card_type", nullable = false)
+    @XFWOneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "card_type_id")
     private CardType cardType;
 }

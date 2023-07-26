@@ -48,7 +48,8 @@ public class CardsRestController {
 
         log.info("Extracted card: id={}, cardType={}", card.get().getId(), card.get().getCardType());
         return CardDTO.builder()
-                .cardType(card.get().getCardType())
+                .cardTypeName(card.get().getCardType().getName())
+                .cashbackPercent(card.get().getCardType().getCashbackPercent())
                 .build();
     }
 }
