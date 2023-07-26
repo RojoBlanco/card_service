@@ -42,6 +42,7 @@ public class CustomCardsServiceImpl implements CustomCardsService {
         return CardDTO.builder()
                 .cardTypeName(card.get().getCardType().getName())
                 .cashbackPercent(card.get().getCardType().getCashbackPercent())
+                .minBalanceForCashback(card.get().getCardType().getMinBalanceForCashback())
                 .build();
     }
 }

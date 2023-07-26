@@ -27,4 +27,8 @@ public class CardType {
     @XFWElementLabel("Cashback percent of that card type")
     @Column(name = "cashback_percent", nullable = false)
     private BigDecimal cashbackPercent;
+
+    @XFWElementLabel("Min balance for cashback")
+    @Column(name = "min_balance_for_cashback", nullable = false)
+    private BigDecimal minBalanceForCashback;
 }
