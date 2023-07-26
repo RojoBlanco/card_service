@@ -6,35 +6,29 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import ru.croc.ctp.jxfw.core.generator.meta.XFWObject;
+import ru.croc.ctp.jxfw.core.domain.meta.XFWElementLabel;
 
 import java.util.UUID;
 
 @XFWObject
 @Table(name = "bank_account")
 public class BankAccount {
-    /**
-     * Unique identifier.
-     */
+
+    @XFWElementLabel("Unique identifier")
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "account_number", nullable = false)
     private UUID accountNumber;
 
-    /**
-     * Client first name.
-     */
+    @XFWElementLabel("Client first name")
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    /**
-     * Client last name.
-     */
+    @XFWElementLabel("Client last name")
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    /**
-     * Client patronymic.
-     */
+    @XFWElementLabel("Client patronymic")
     @Column(name = "patronymic")
     private String patronymic;
 }
