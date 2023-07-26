@@ -34,6 +34,6 @@ CREATE TABLE IF NOT EXISTS card (
     FOREIGN KEY(card_type_id) REFERENCES card_type(id)
 );
 
--- Rearrange the DELETE statements to avoid foreign key constraint violation
 DELETE FROM card;
+DELETE FROM card_type;
 DELETE FROM bank_account;
