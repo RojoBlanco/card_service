@@ -11,13 +11,11 @@ import ru.croc.ctp.jxfw.core.domain.meta.XFWElementLabel;
 
 import java.math.BigDecimal;
 
-
-
 @XFWObject
 @Table(name = "card_type")
 public class CardType {
-    @XFWElementLabel("Unique card type identifier")
     @Id
+    @XFWElementLabel("Unique card type identifier")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "card_type_seq")
     @SequenceGenerator(name = "card_type_seq", sequenceName = "card_type_seq", allocationSize = 1)
     private Long id;
@@ -26,9 +24,6 @@ public class CardType {
     @Column(name = "type_name", nullable = false)
     private String name;
 
-    /**
-     * Cashback percent of that card type.
-     */
     @XFWElementLabel("Cashback percent of that card type")
     @Column(name = "cashback_percent", nullable = false)
     private BigDecimal cashbackPercent;
