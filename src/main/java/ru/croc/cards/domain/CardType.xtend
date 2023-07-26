@@ -1,25 +1,35 @@
 package ru.croc.cards.domain;
 
-import ru.croc.ctp.jxfw.core.domain.meta.XFWEnumId;
-import ru.croc.ctp.jxfw.core.generator.meta.XFWEnum;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import ru.croc.ctp.jxfw.core.generator.meta.XFWObject;
 
-@XFWEnum
-public enum CardType {
+import java.math.BigDecimal;
+
+@XFWObject
+@Table(name = "card_type")
+public class CardType {
     /**
-     * Default hipster card.
+     * Unique card type identifier.
      */
-    @XFWEnumId(1)
-    HIPSTER_DEFAULT,
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "card_type_seq")
+    @SequenceGenerator(name = "card_type_seq", sequenceName = "card_type_seq", allocationSize = 1)
+    private Long id;
 
     /**
-     * Gold hipster card.
+     * Name of the card type.
      */
-    @XFWEnumId(2)
-    HIPSTER_GOLD,
+    @Column(name = "type_name", nullable = false)
+    private String name;
 
     /**
-     * Default not hipster card.
+     * Cashback percent of that card type.
      */
-    @XFWEnumId(3)
-    DEFAULT
+    @Column(name = "cashback_percent", nullable = false)
+    private BigDecimal cashbackPercent;
 }
