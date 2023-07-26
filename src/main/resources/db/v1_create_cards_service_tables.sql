@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS card_type (
     id BIGSERIAL PRIMARY KEY,
     type_name VARCHAR(255) NOT NULL,
     cashback_percent NUMERIC NOT NULL,
+    min_balance_for_cashback NUMERIC NOT NULL,
     ts BIGINT DEFAULT 1
 );
 

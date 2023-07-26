@@ -6,13 +6,13 @@ VALUES
     ('ea849672-5368-4014-ab74-b9639cfe747f', 'Dmitrii', 'Sobolev', 'Evgenievich'),
     ('105e50b1-4cd7-491f-8d0d-0c308968bec0', 'Semen', 'Vorobiev', 'Alexandrovich');
 
-INSERT INTO card_type (id, type_name, cashback_percent)
+INSERT INTO card_type (id, type_name, cashback_percent, min_balance_for_cashback)
 VALUES
-    (991, 'DEFAULT_CARD', 0.5),
-    (992, 'HIPSTER_DEFAULT', 1),
-    (993, 'HIPSTER_GOLD', 1.5),
-    (994, 'HIPSTER_PLATINUM', 2),
-    (995, 'HIPSTER_BLACK', 2.5);
+    (991, 'DEFAULT_CARD', 0.5, 30000),
+    (992, 'HIPSTER_DEFAULT', 1, 50000),
+    (993, 'HIPSTER_GOLD', 1.5, 70000),
+    (994, 'HIPSTER_PLATINUM', 2, 90000),
+    (995, 'HIPSTER_BLACK', 2.5, 110000);
 
 INSERT INTO card (id, account_number, card_type_id)
 VALUES
