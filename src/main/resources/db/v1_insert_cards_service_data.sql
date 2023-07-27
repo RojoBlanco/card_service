@@ -1,10 +1,10 @@
 INSERT INTO bank_account (account_number, first_name, last_name, patronymic)
 VALUES
-    ('63ebd05b-a67e-47d3-99f4-b8f7306b52cd', 'Alexey', 'Ivanov', 'Dmitrievich'),
-    ('f2dea26d-4d41-45ac-8bb6-90b7d58447ec', 'Petr', 'Petrov', 'Danilovich'),
-    ('5cc4ed6a-c2c7-4163-bc29-bc76c3ee9cad', 'Alexandr', 'Smirnov', 'Petrovich'),
-    ('ea849672-5368-4014-ab74-b9639cfe747f', 'Dmitrii', 'Sobolev', 'Evgenievich'),
-    ('105e50b1-4cd7-491f-8d0d-0c308968bec0', 'Semen', 'Vorobiev', 'Alexandrovich');
+    ('63ebd05b-a67e-47d3-99f4-b8f7306b52cd', 'Alexey', 'Ivanov', 'Dmitrievich'), --Default Card
+    ('f2dea26d-4d41-45ac-8bb6-90b7d58447ec', 'Petr', 'Petrov', 'Danilovich'), -- HIPSTER_DEFAULT
+    ('5cc4ed6a-c2c7-4163-bc29-bc76c3ee9cad', 'Alexandr', 'Smirnov', 'Petrovich'), -- HIPSTER_GOLD
+    ('ea849672-5368-4014-ab74-b9639cfe747f', 'Dmitrii', 'Sobolev', 'Evgenievich'), --  HIPSTER_PlATINUM
+    ('105e50b1-4cd7-491f-8d0d-0c308968bec0', 'Semen', 'Vorobiev', 'Alexandrovich'); -- HIPSTER BLACK
 
 INSERT INTO card_type (id, type_name, cashback_percent, min_balance_for_cashback)
 VALUES
