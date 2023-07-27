@@ -24,7 +24,6 @@ public class CardsServiceApplication {
         var rootDirAbsolutePath = ((File) servletContext
                 .getAttribute("jakarta.servlet.context.tempdir"))
                 .getAbsolutePath();
-
         return new LocalResourceStore(rootDirAbsolutePath, 100L);
     }
 }
