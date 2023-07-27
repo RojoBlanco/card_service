@@ -40,8 +40,8 @@ deploy:
   stage: deploy
   image: "docker/compose:1.25.1"
   variables:
-    HOST_PORT: "8080"
-    CONTAINER_PORT: "8080"
+    HOST_PORT: "8082"
+    CONTAINER_PORT: "8082"
   script:
     - docker stop ${CI_PROJECT_NAME}-$HOST_PORT || true
     - docker rm ${CI_PROJECT_NAME}-$HOST_PORT || true
