@@ -1,8 +1,8 @@
-# 💳 Cards Microservice
+# 💳 Cards Service
 
 This microservice is responsible for storing users' cards and bank accounts.
 
-# 📝 .xtend Models
+## 📝 .xtend Models
 
 There are 3 .xtend models within this microservice:
 
@@ -10,11 +10,11 @@ There are 3 .xtend models within this microservice:
 - [Card.xtend](https://gitlab.croc.ru/CROC.DRPO_RnD/jxfw/sandbox/school2023/team4/cards-service/-/blob/main/src/main/java/ru/croc/cards/domain/Card.xtend)
 - [BankAccount.xtend](https://gitlab.croc.ru/CROC.DRPO_RnD/jxfw/sandbox/school2023/team4/cards-service/-/blob/main/src/main/java/ru/croc/cards/domain/BankAccount.xtend)
 
-# ↔️ The relationship between the entities can be represented by the following diagram.
+## ↔️ The relationship between the entities can be represented by the following diagram.
 
 ![img.png](img/img.png)
 
-# 📥 Endpoints
+## 📥 Endpoints
 
 This microservice has only one REST endpoint:
 /api/v1/cards/get-card-type - Get information about card by bank account number
